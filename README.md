@@ -1,2 +1,3 @@
 # RISC-Architecture-Simulation
 A simulator for a basic computer with reduced instruction set using object oriented programming paradigm.
+This simulator converts the assembly code to machine code and simulates the program execution phases. It runs the program step by step while showing the phases of instruction cycle (fetching, decoding, execution). It reads and parses the assembly code, then shows its label table and memory content table. The simulator shows contents of the registers, memory segments, computer operations and their micro operations. It can simulate all operations that simulation supports (Table 1). It provides switching between binary / hexadecimal / decimal numbers and exporting hex or mif file of the machine code (HEX code or binary code).

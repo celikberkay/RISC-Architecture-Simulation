@@ -1,0 +1,10 @@
+ORG C 2
+ADD R3, R1, R2
+LD R2, #2
+ADD R3, R1, R2
+ST R2, @S
+HLT
+ORG D 3
+A: DEC 8
+S: HEX 15
+END

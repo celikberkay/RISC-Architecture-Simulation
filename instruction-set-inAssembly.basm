@@ -1,0 +1,42 @@
+%This file includes examples for instruction set in symbolic language (assembly)
+
+ORG C 2			%pseudo-instruction for origin of instruction memory
+ORG D 2			%pseudo-instruction for origin of data memory
+ORG S 2			%pseudo-instruction for origin of stack memory
+END				%pseudo-instruction for end of assembly code 
+HLT				%Halt the computer
+ADD OUTR,R0,R1	%Add content of register R0 and R1 and store result into output register
+INC R1,R0		%Increment content of register R0 and store result into R1
+INC R0			%Increment content of register R0 and store result into R0
+DBL R2,R1		%Double content of register R1 and store result into R2
+DBL R1			%Double content of register R1 and store result into R1
+DBT OUTR,INPR	%Divide by two content of input register and store result into output register
+DBT R2			%Divide by two content of register R2 and store result into R2
+NOT R2,INPR		%Complement of content of input register and store result into R2
+NOT R2			%Complement of content of register R2 and store result into R2
+AND R2,R0,INPR	%Add content of register R0 to the content in input register and store result into R2
+LD	R0,@4		%Read the data memory content of address 4 and load it into R0
+LD	R1,@ADR		%Read the data memory content of address that ADR indicates and load it into R1
+LD	R2,#5		%Load 5 into R2
+ST	R1,@RES		%Write the content of R1 into the address of data memory, that RES indicates
+ST	INPR,@3		%Write the content of input register into the memory of address 3
+ST	R2,OUTR		%Write the content of R2 into output register
+TSF	R1,R0		%Transfer the content of R0 into R1
+TSF	OUTR,R1		%Transfer the content of R1 into output register
+TSF	R2,INPR		%Transfer the content of input register into R2
+TSF	OUTR,INPR	%Transfer the content of input register into output register
+CAL	12			%Go to the address 12 in instruction memory
+CAL	SUB			%Go to the address that SUB indicates in instruction memory
+RET				%Return previous address into instructon memory
+JMP	23			%Jump to address 23 in instruction memory
+JMP MUL			%Jump to the address that MUL indicates
+JMP 5 V			%JUMP to address 5 if overflow exists
+JMR	2			%Jump to the address after 2 from existing address
+JMR	-2			%Jump to the address before 2 from existing address
+JMR	0101 BIN	%Jump to the address after signed number 0101 (5) from existing address
+JMR	1011 BIN	%Jump to the address before signed number 1100 (-5) from existing address
+PSH	#4			%Push 4 to stack memory
+PSH	@4 C		%Push the content of address 4 in instruction memory
+PSH	@11 D		%Push the content of address 11 in data memory
+PSH	@DT			%Push the content of address that DT indicates
+POP				%Pop data in stack memory
